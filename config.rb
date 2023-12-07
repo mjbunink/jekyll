@@ -19,6 +19,12 @@ activate :external_pipeline,
   latency: 2,
   source: "./dist/"
 
+activate :deploy do |deploy|
+  deploy.method = :git
+  deploy.branch = 'master'
+  # ... other deploy setup
+  # end
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
