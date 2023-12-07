@@ -13,6 +13,12 @@ page '/*.xml', layout: false
 page '/*.json', layout: false
 page '/*.txt', layout: false
 
+activate :external_pipeline,
+  name: :tailwind,
+  command: "npx tailwindcss -i ./source/stylesheets/site.css -o ./dist/stylesheets/site.css #{"--watch" unless build?}",
+  latency: 2,
+  source: "./dist/"
+
 # With alternative layout
 # page '/path/to/file.html', layout: 'other_layout'
 
